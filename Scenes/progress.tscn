@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bbijfcx5gselm"]
+
+[ext_resource type="Texture2D" uid="uid://o3pye38dptj5" path="res://Other Art/Background+/profile.jpg" id="1_48c3n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4bd6"]
+bg_color = Color(0.37349057, 0.6025611, 0.93518317, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6427723, 0.7446216, 0.9965225, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ujt6"]
+bg_color = Color(0.82048035, 0.83983666, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Control" type="Control" unique_id=506412907]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerInfoBox" type="Panel" parent="." unique_id=799961724]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 144.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v4bd6")
+
+[node name="AvatarFrame" type="Panel" parent="PlayerInfoBox" unique_id=1328874730]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -17.0
+offset_right = 38.0
+offset_bottom = 17.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ujt6")
+
+[node name="Avatar" type="TextureRect" parent="PlayerInfoBox/AvatarFrame" unique_id=1963156071]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_48c3n")
+expand_mode = 1

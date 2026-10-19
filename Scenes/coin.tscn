@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bvjxrxwpkfpny"]
+
+[ext_resource type="Script" uid="uid://byncr8aeqf7ae" path="res://Scripts/coin.gd" id="1_0t63x"]
+[ext_resource type="Texture2D" uid="uid://ubkv4dmowqf4" path="res://Other Art/Objects/Coins.png" id="1_d5gmh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t63x"]
+atlas = ExtResource("1_d5gmh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7riw"]
+atlas = ExtResource("1_d5gmh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdq0q"]
+atlas = ExtResource("1_d5gmh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w14il"]
+atlas = ExtResource("1_d5gmh")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4etq"]
+atlas = ExtResource("1_d5gmh")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ujt6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t63x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7riw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdq0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w14il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4etq")
+}],
+"loop": 1,
+"name": &"Spin",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdq0q"]
+size = Vector2(45, 50)
+
+[node name="Coin" type="Node2D" unique_id=1900505450 groups=["Coins"]]
+script = ExtResource("1_0t63x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2088589246]
+position = Vector2(92.75, 69.25)
+scale = Vector2(3.1562498, 3.1562498)
+sprite_frames = SubResource("SpriteFrames_5ujt6")
+animation = &"Spin"
+autoplay = "Spin"
+frame_progress = 0.7331717
+
+[node name="Area2D" type="Area2D" parent="." unique_id=261818067]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=573971729]
+position = Vector2(92.5, 69)
+shape = SubResource("RectangleShape2D_pdq0q")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
